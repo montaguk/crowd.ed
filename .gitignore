@@ -1,6 +1,12 @@
 # Ignore the virtual env
 env/*
 
+# Ignore db migrations (for now)
+proj/crowded/migrations/*
+
+# Ignore db file itself
+proj/db.sqlite3
+
 # Ignore compiled python objects
 *.pyc
 
