@@ -11,6 +11,14 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   intro
+   phases
+   contributing
+   developers
+   
+   
+   
+
 
 
 Indices and tables
