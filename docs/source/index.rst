@@ -1,10 +1,10 @@
-.. Secret Ninja documentation master file, created by
-   sphinx-quickstart on Wed Aug 20 19:17:40 2014.
+.. crowd.ed documentation master file, created by
+   sphinx-quickstart on Fri Aug 22 23:39:27 2014.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Secret Ninja's documentation!
-========================================
+Welcome to crowd.ed's documentation!
+====================================
 
 Contents:
 

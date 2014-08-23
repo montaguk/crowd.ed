@@ -1,0 +1,9 @@
+# Ignore the virtual env
+env/*
+
+# Ignore compiled python objects
+*.pyc
+
+# Ignore temporary files
+*~
+#*#
