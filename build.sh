@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
+# Run Unit Tests
 nosetests
-python ./test.py
 
 #Build Docs
 echo "Building Docs"
