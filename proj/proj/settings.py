@@ -44,6 +44,12 @@ INSTALLED_APPS = (
     'crowded',
 )
 
+# Apps for debugging
+if DEBUG is True:
+    INSTALLED_APPS += (
+        'debug_toolbar',
+    )
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
