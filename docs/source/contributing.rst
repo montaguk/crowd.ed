@@ -5,7 +5,7 @@ Since crowd.ed is a crowd-powered project, things only get done when people pitc
 in need of support from software developers to build and expand our software platform.  If you
 are interested in joining the development effort, check out the :doc:`Developers Page </developers>`.
 
-Unfortunately, since we don't have the plaform completed yet, we're not quite ready to accept
+Unfortunately, since we don't have the platform completed yet, we're not quite ready to accept
 major contributions from *non-technical* types.  However, don't be discouraged!  Once we have the
 platform up and running, there will be plenty of work to go around.  If you would like to stay
 informed of our progress, you can join our mailing list, and we'll let you know when we're ready
