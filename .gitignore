@@ -1,3 +1,6 @@
+# Ignore generated documents
+docs/build/*
+
 # Ignore the virtual env
 env/*
 
