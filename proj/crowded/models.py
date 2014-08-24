@@ -26,7 +26,7 @@ class Review(UserContent):
     comments   = models.TextField()
 
     def __unicode__(self):
-        return 'Review({})'.format(self.reviewable.__unicode__())
+        return 'Review({})'.format(self.reviewable)
 
 class Reviewable(UserContent):
     """Defines an item that can be reviewed by a user.
@@ -39,19 +39,32 @@ class Reviewable(UserContent):
     nessecary change themselves.  Of course, all changes must be reviewed
     before they make it to the main page
     """
-    class Meta:
-        proxy = True
+    class_name = models.CharField(max_length=20, editable=False)
     
+    def __init__(self, *args, **kwargs):
+        super(Reviewable, self).__init__(*args, **kwargs)
+        if not self.pk and not self.class_name:
+            self.class_name = self.CLASS_NAME
+
     def __unicode__(self):
-        """This function should be overridden by any implementing child
-        """
-        pass
+        return getattr(self, self.class_name).__unicode__()
 
 class Bill(Reviewable):
     """Defines a bill
     """
+    CLASS_NAME = 'bill'
+    
     name    = models.CharField(max_length=36)
     summary = models.TextField()
-
+    
     def __unicode__(self):
         return 'Bill({})'.format(self.name)
+
+class CongressPerson(Reviewable):
+    CLASS_NAME = 'congressperson'
+
+    first_name = models.CharField(max_length=20)
+    last_name  = models.CharField(max_length=30)
+
+    def __unicode__(self):
+        return 'CongressPerson({}, {}.)'.format(self.last_name, self.first_name[0])

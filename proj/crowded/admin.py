@@ -14,6 +14,6 @@ class ReviewAdmin(admin.ModelAdmin):
 admin.site.register(UserContent)
 admin.site.register(ReviewFlag)
 admin.site.register(Review, ReviewAdmin)
-admin.site.register(Reviewable)
 
 admin.site.register(Bill)
+admin.site.register(CongressPerson)

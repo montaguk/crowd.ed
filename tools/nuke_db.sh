@@ -19,3 +19,7 @@ rm -rf "$MIGRATION_DIR"
 
 # Regen the database, prompt to create superuser
 python "$DB_DIR/manage.py" syncdb
+
+# Apply the table migrations
+python "$DB_DIR/manage.py" schemamigration crowded --initial
+python "$DB_DIR/manage.py" migrate crowded --fake
