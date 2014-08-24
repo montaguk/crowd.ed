@@ -62,9 +62,28 @@ class Bill(Reviewable):
 
 class CongressPerson(Reviewable):
     CLASS_NAME = 'congressperson'
-
+    cp_type    = models.CharField(max_length=15, editable=False)
     first_name = models.CharField(max_length=20)
     last_name  = models.CharField(max_length=30)
 
+    def __init__(self, *args, **kwargs):
+        super(CongressPerson, self).__init__(*args, **kwargs)
+        if not self.pk and not self.cp_type:
+            self.cp_type = self.CP_TYPE
+
     def __unicode__(self):
-        return 'CongressPerson({}, {}.)'.format(self.last_name, self.first_name[0])
+        return 'CongressPerson({})'.format(getattr(self, self.cp_type).__unicode__())
+
+class Senator(CongressPerson):
+    CP_TYPE    = 'senator'
+    term       = models.DecimalField(max_digits=3, decimal_places=0)
+
+    def __unicode__(self):
+        return 'Senator({}, {}.)'.format(self.last_name, self.first_name[0])
+
+class Representative(CongressPerson):
+    CP_TYPE = 'representative'
+    term    = models.DecimalField(max_digits=3, decimal_places=0)
+    
+    def __unicode__(self):
+        return 'Representative({}, {}.)'.format(self.last_name, self.first_name[0])

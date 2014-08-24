@@ -16,4 +16,6 @@ admin.site.register(ReviewFlag)
 admin.site.register(Review, ReviewAdmin)
 
 admin.site.register(Bill)
-admin.site.register(CongressPerson)
+admin.site.register(Senator)
+admin.site.register(Representative)
+
